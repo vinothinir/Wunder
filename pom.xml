@@ -1,0 +1,141 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>org</groupId>
+  <artifactId>sampleproject</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>sampleproject</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<testng.selenium.endpoint>https://google.com</testng.selenium.endpoint>
+  </properties>
+  
+  	<repositories>
+		<repository>
+			<releases>
+				<enabled>true</enabled>	
+				<updatePolicy>never</updatePolicy>			
+				<checksumPolicy>fail</checksumPolicy>
+			</releases>
+			<id>Experitest.repo1</id>
+			<name>YourName</name>
+			<url>http://repo.experitest.com:8010/Maven2/</url>
+			<layout>default</layout>
+		</repository>
+	</repositories>
+
+  <dependencies>
+  
+    <dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>6.10</version>
+	</dependency>
+	  <dependency>
+		  <groupId>io.appium</groupId>
+		  <artifactId>java-client</artifactId>
+		  <version>6.1.0</version>
+	  </dependency>
+	<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
+	</dependency>
+	
+	<dependency>
+			<groupId>net.sourceforge.jexcelapi</groupId>
+			<artifactId>jxl</artifactId>
+			<version>2.6.12</version>
+	</dependency>
+	
+
+
+	  <dependency>
+		  <groupId>org.seleniumhq.selenium</groupId>
+		  <artifactId>selenium-java</artifactId>
+		  <version>3.14.0</version>
+	  </dependency>
+
+
+	  <dependency>
+		  <groupId>org.seleniumhq.selenium</groupId>
+		  <artifactId>selenium-api</artifactId>
+		  <version>3.141.5</version>
+	  </dependency>
+
+	  <dependency>
+		  <groupId>org.seleniumhq.selenium</groupId>
+		  <artifactId>selenium-remote-driver</artifactId>
+		  <version>3.141.5</version>
+	  </dependency>
+
+	
+	<dependency>
+			<groupId>com.experitest</groupId>
+			<artifactId>seetest-client</artifactId>
+			<version>11.3</version>
+	</dependency>
+	
+	<dependency>
+		    <groupId>com.aventstack</groupId>
+		    <artifactId>extentreports</artifactId>
+		    <version>3.1.2</version>
+     </dependency>
+	
+  </dependencies>
+  
+       <build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+
+					<outputDirectory>${project.build.directory}/classes</outputDirectory>
+				</configuration>
+				<executions>
+					<execution>
+						<id>jdk8</id>
+						<phase>none</phase>
+						<goals>
+							<goal>compile</goal>
+						</goals>
+						<configuration>
+							<fork>true</fork>
+							<meminitial>128m</meminitial>
+							<maxmem>1024m</maxmem>
+							<verbose>true</verbose>
+							<includes>
+								<include>src/main/java/**/*.java</include>								
+							</includes>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.18.1</version>
+				<configuration>
+					<suiteXmlFiles>					     
+					     <suiteXmlFile>fastTip.xml</suiteXmlFile>
+					</suiteXmlFiles>
+					<systemProperties>
+						<testng.selenium.endpoint>${testng.selenium.endpoint}</testng.selenium.endpoint>
+					</systemProperties>
+				</configuration>
+			</plugin>			
+		</plugins>
+	</build>
+</project>

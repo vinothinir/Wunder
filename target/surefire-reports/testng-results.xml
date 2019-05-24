@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite1" duration-ms="24175" started-at="2019-05-24T06:05:38Z" finished-at="2019-05-24T06:06:02Z">
+    <groups>
+    </groups>
+    <test name="test1" duration-ms="24175" started-at="2019-05-24T06:05:38Z" finished-at="2019-05-24T06:06:02Z">
+      <class name="Scenarios.fastTip">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:Scenarios.fastTip@2ef9b8bc]" name="setUp" is-config="true" duration-ms="11689" started-at="2019-05-24T08:05:38Z" finished-at="2019-05-24T08:05:49Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="testCheckHomeIcons()[pri:0, instance:Scenarios.fastTip@2ef9b8bc]" name="testCheckHomeIcons" duration-ms="8821" started-at="2019-05-24T08:05:49Z" finished-at="2019-05-24T08:05:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCheckHomeIcons -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:Scenarios.fastTip@2ef9b8bc]" name="tearDown" is-config="true" duration-ms="3641" started-at="2019-05-24T08:05:58Z" finished-at="2019-05-24T08:06:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- Scenarios.fastTip -->
+    </test> <!-- test1 -->
+  </suite> <!-- Suite1 -->
+</testng-results>
